@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  database: faith
+  user: pguser
+  password: 12345
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
