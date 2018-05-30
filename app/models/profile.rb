@@ -3,7 +3,7 @@ class Profile < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :recoverable  and :omniauthable
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable
-  
+
   enum role: [:patient, :doctor]
   after_initialize :set_default_role, :if => :new_record?
 

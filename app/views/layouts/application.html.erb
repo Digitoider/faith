@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <%if profile_signed_in? %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <div class="container">
       <div class="row">
         <div class="col offset-s3 s6">
@@ -29,6 +33,7 @@
           <% end %>
         </div>
       </div>
+
       <%= yield %>
     </div>
   </body>
