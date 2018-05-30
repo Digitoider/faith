@@ -2,6 +2,7 @@
   <div class="nav-wrapper">
     <a href="#" class="brand-logo">Faith</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%= link_to "Profile", profile_index_path%></li>
       <li><%= link_to "Logout", destroy_profile_session_path, method: :delete %></li>
     </ul>
   </div>
