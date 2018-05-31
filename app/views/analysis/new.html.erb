@@ -7,42 +7,47 @@ actions: search_user, fill textarea with analysis
       <div class="card-content ">
         <span class="card-title">Add analysis</span>
 
+        <% @analysis.errors.full_messages.each do |e|  %>
+          <div><%= e %></div>
+        <% end %>
 
         <div class="row">
           <div class="input-field col s6">
-            <%= form_for :analysis do |f| %>
+            <%= form_for @analysis, url: analysis_index_path do |f| %>
 
               <div class="input-field col s12">
-                <%= f.select :profile, [], {}, {class: 'profile-select2'} %>
+                <%#= f.select :profile_id, [], {}, {class: 'profile-select2'} %>
+                <%= f.select :profile_id,
+                             options_for_select([@selected_profile], selected: @analysis.profile_id),
+                             {}, {class: 'profile-select2'} %>
               </div>
 
               <div class="input-field col s12">
-                <%= f.label :analysis_text, 'Analysis' %>
-                <%= f.text_area :analysis_text, {class: 'materialize-textarea'} %>
+                <%= f.label :analysis, 'Analysis' %>
+                <%= f.text_area :analysis, {class: 'materialize-textarea'} %>
               </div>
 
               <div class="input-field col s12">
-                <%= f.label :date, 'Recieved analysis at' %>
-                <%= f.text_field :date, {class: 'datepicker'} %>
+                <%= f.label :received_at, 'Recieved analysis at' %>
+                <%= f.text_field :received_at, {class: 'datepicker'} %>
               </div>
 
               <div class="switch col s12">
                 <span>Operation required? </span>
                 <label class="">
-<!--                  No-->
-                  <input type="checkbox">
+                  <%= f.check_box :operation_required? %>
+<!--                  <input type="checkbox">-->
                   <span class="lever"></span>
-<!--                  Yes-->
                 </label>
               </div>
 
               <div class="input-field col s6">
-                <%= f.label :min_duration, 'Min duration' %>
+                <%= f.label :min_duration, 'Min duration (in hours)' %>
                 <%= f.text_field :min_duration %>
               </div>
 
               <div class="input-field col s6">
-                <%= f.label :max_duration, 'Max duration' %>
+                <%= f.label :max_duration, 'Max duration (in hours)' %>
                 <%= f.text_field :max_duration %>
               </div>
 

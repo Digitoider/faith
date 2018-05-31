@@ -1,14 +1,14 @@
+# frozen_string_literal: true
+
 class ProfileController < ApplicationController
-  def index
-  end
+  
+  def index; end
 
   def paginate
     render json: get_profiles
   end
 
   private
-
-
 
   def get_profiles
     q = params[:q] || ''
@@ -32,17 +32,4 @@ class ProfileController < ApplicationController
     }
   end
 
-  # remove after app is complete
-  def gen_profiles
-    (1..15).each do |i|
-      p = Profile.new
-      p.name = "name#{i}"
-      p.surname = "surname#{i}"
-      p.middlename = "middlename#{i}"
-      p.email = "user#{i + 5}@m.ru"
-      p.age = i + 12
-      p.password = '111111'
-      p.save
-    end
-  end
 end

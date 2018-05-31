@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_063346) do
+ActiveRecord::Schema.define(version: 2018_05_31_200901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "analyses", force: :cascade do |t|
+    t.bigint "profile_id"
+    t.text "analysis"
+    t.date "received_at"
+    t.boolean "operation_required"
+    t.float "min_duration"
+    t.float "max_duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_analyses_on_profile_id"
+  end
+
+  create_table "analysis", force: :cascade do |t|
+    t.bigint "profile_id"
+    t.text "analysis"
+    t.date "received_at"
+    t.boolean "operation_required"
+    t.float "min_duration"
+    t.float "max_duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_analysis_on_profile_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,4 +61,6 @@ ActiveRecord::Schema.define(version: 2018_05_30_063346) do
     t.index ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "analyses", "profiles"
+  add_foreign_key "analysis", "profiles"
 end

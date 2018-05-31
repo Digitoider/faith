@@ -9,8 +9,8 @@ class Profile < ApplicationRecord
 
   validates :name, :surname, :middlename, :age, presence: true
   validates :age, inclusion: 0..120
-  # validates_inclusion_of :age, in: 0..120
 
+  has_many :analyses
 
   def set_default_role
     self.role ||= :patient

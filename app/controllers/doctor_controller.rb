@@ -4,8 +4,4 @@ class DoctorController < ApplicationController
 
   end
 
-  def add_analysis
-
-  end
-
 end
