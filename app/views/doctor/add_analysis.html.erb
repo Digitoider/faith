@@ -1,0 +1,85 @@
+Here goes adding analysis
+actions: search_user, fill textarea with analysis
+
+<div class="row">
+  <div class="col s12">
+    <div class="card grey lighten-5">
+      <div class="card-content ">
+        <span class="card-title">Add analysis</span>
+
+
+        <div class="row">
+          <div class="input-field col s6">
+            <%= form_for :analysis do |f| %>
+              <%= f.select :profile, [], {}, {class: 'profile-select2'} %>
+            <% end %>
+
+<!--            <div class="row">-->
+<!--              <div class="col s12">-->
+<!--                <div class="input-field col s12">-->
+<!--                  <input type="text" id="autocomplete-input" class="autocomplete">-->
+<!--                  <label for="autocomplete-input">Autocomplete</label>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('.profile-select2').select2({
+
+            ajax: {
+                url: "/paginate_profiles",
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        q: params.term, // search term
+                        page: params.page
+                    };
+                },
+                processResults: function (data, params) {
+                    params.page = params.page || 1;
+                    console.log(data);
+                    return {
+                        results: data.items,
+                        pagination: {
+                            more: (params.page * data.per_page) < data.total_count
+                        }
+                    };
+                },
+                cache: true
+            },
+            escapeMarkup: function (markup) {
+                return markup;
+            }
+        });
+
+        // $(function() {
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: "/profiles/all",
+        //         success: function(response) {
+        //             console.log(response);
+        //
+        //             var profiles = response;
+        //             var data = {}
+        //             for (var i = 0; i < profiles.length; i++) {
+        //                 var fio = [profiles[i].surname, profiles[i].name, profiles[i].middlename].join(' ');
+        //                 data[fio] = null;
+        //             }
+        //             $('input.autocomplete').autocomplete({
+        //                 data: data
+        //             });
+        //         }
+        //     });
+        // });
+    });
+
+</script>

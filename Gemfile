@@ -16,6 +16,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'devise'
 gem 'materialize-sass', '~> 1.0.0.rc1'
+gem "select2-rails"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

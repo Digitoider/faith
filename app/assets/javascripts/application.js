@@ -17,4 +17,5 @@
 //= require popper
 //= require bootstrap
 //= require materialize
+//= require select2
 //= require_tree .
