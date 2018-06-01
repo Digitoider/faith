@@ -1,0 +1,18 @@
+<% p alert %>
+<% if alert %>
+  <% puts '  in alert'%>
+  <%= render partial: 'shared/error', locals: { error_msg: alert } %>
+  <%p render partial: 'shared/error', locals: { error_msg: alert } %>
+<% end %>
+
+<% if flash[:error] %>
+  <%= render partial: 'shared/error', locals: { error_msg: flash[:error] } %>
+<% end %>
+
+<% model = model || nil %>
+
+<% if model && model.errors.any? %>
+  <% model.errors.full_messages.each do |msg| %>
+    <%= render partial: 'shared/error', locals: { error_msg: msg } %>
+  <% end %>
+<% end %>

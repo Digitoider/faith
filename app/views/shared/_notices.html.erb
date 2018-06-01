@@ -1,0 +1,7 @@
+<% if notice %>
+  <%= render partial: 'shared/notice', locals: { notice_msg: notice } %>
+<% end %>
+
+<% if flash[:success] %>
+  <%= render partial: 'shared/notice', locals: { notice_msg: flash[:success] } %>
+<% end %>

@@ -15,22 +15,29 @@
     <% end %>
 
     <div class="container">
+<!--      <div class="row">-->
+<!--        <div class="col offset-s3 s6">-->
+          <%# if notice %>
+<!--            <div class="card-panel blue lighten-2">-->
+<!--              <span class="white-text"><%#= notice %></span>-->
+<!--            </div>-->
+          <%# end %>
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="col offset-s3 s6">-->
+          <%# if alert %>
+<!--            <div class="card-panel red lighten-2 ">-->
+<!--              <span class="white-text"><%#= alert %></span>-->
+<!--            </div>-->
+          <%# end %>
+<!--        </div>-->
+<!--      </div>-->
       <div class="row">
         <div class="col offset-s3 s6">
-          <% if notice %>
-            <div class="card-panel blue lighten-2">
-              <span class="white-text"><%= notice %></span>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col offset-s3 s6">
-          <% if alert %>
-            <div class="card-panel red lighten-2 ">
-              <span class="white-text"><%= alert %></span>
-            </div>
-          <% end %>
+
+          <%= render partial: 'shared/errors', locals: { alert: alert} %>
+          <%= render partial: 'shared/notices' %>
         </div>
       </div>
 

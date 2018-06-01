@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_200901) do
+ActiveRecord::Schema.define(version: 2018_06_01_210527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,25 @@ ActiveRecord::Schema.define(version: 2018_05_31_200901) do
     t.index ["profile_id"], name: "index_analysis_on_profile_id"
   end
 
+  create_table "operation_days", force: :cascade do |t|
+    t.date "at"
+    t.float "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "operations", force: :cascade do |t|
+    t.time "starts_at"
+    t.time "ends_at"
+    t.boolean "is_operated", default: false
+    t.bigint "operation_day_id"
+    t.bigint "analysis_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["analysis_id"], name: "index_operations_on_analysis_id"
+    t.index ["operation_day_id"], name: "index_operations_on_operation_day_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -63,4 +82,6 @@ ActiveRecord::Schema.define(version: 2018_05_31_200901) do
 
   add_foreign_key "analyses", "profiles"
   add_foreign_key "analysis", "profiles"
+  add_foreign_key "operations", "analyses"
+  add_foreign_key "operations", "operation_days"
 end

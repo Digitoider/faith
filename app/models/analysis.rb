@@ -1,8 +1,9 @@
 class Analysis < ApplicationRecord
   belongs_to :profile
+  belongs_to :operation_day, optional: true
+  has_one :operation
 
   validates :profile_id, :analysis, :received_at, presence: true
-  # validates :min_duration, :max_duration, inclusion: { in: 0..8 }
   validate :operation_required_validator
 
   protected
@@ -14,9 +15,6 @@ class Analysis < ApplicationRecord
 
       validates_numericality_of :min_duration
       validates_numericality_of :min_duration
-
-      # errors.add :min_duration, "Must be a float." if min_duration.to_f < 0
-      # errors.add :max_duration, "Must be a float." if max_duration.to_f > 8
 
       errors.add :min_duration, "can't be less than 0" if min_duration.to_f < 0
       errors.add :max_duration, "can't be less than 0" if max_duration.to_f < 0
