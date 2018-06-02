@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   resources :profile, only: %i[index]
   resources :analysis, only: %i[new create]
   resources :schedule, only: %i[new create]
-  # get 'add_analysis', to: 'analysis#new'
-  # post 'add_analysis', to: 'doc'
+  post '/schedule/generate', to: 'schedule#generate', as: :schedule_generate
 
   get '/paginate_profiles', to: 'profile#paginate'
 end

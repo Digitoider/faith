@@ -14,4 +14,50 @@ class ScheduleController < ApplicationController
 
   end
 
+  def generate
+    # TODO: Validate data. If errors then generate response errors array
+    errors = validate_data
+    return render json: {errors: errors}
+    # TODO: Generate Schedule
+    # TODO: Save schedule
+    # TODO: Respond with success (and maybe a link to generated schedule)
+  end
+
+  protected
+
+  def validate_data
+    errors = []
+    errors.push "Operation date shouldn't be blank" if params[:at].blank?
+
+    unless params[:at].blank?
+      begin
+        at = Date.parse(params[:at])
+      rescue ArgumentError
+        errors.push "Operation date has invalid format"
+      end
+    end
+    
+    unless at.nil?
+      errors.push "The date you've picked has been already taken. Please, pick another operation date" if OperationDay.where(at: at).exists?
+    end
+
+    params.require(:rooms).permit!
+    rooms = params[:rooms]
+    rooms.to_h.each do |room|
+      room = room[1]
+      p room['name']
+      errors.push "Name shouldn't be empty for ROOM #{room['id']}" if room['name'].strip.empty?
+
+      if room['capacity'] !~ /^\s*[+-]?((\d+_?)*\d+(\.(\d+_?)*\d+)?|\.(\d+_?)*\d+)(\s*|([eE][+-]?(\d+_?)*\d+)\s*)$/
+        errors.push "Capacity must be of type float! (ROOM #{room['id']})"
+      else
+        capacity = room['capacity'].to_f
+        errors.push "Capacity shouldn't be less than 0 or greater than 12 (ROOM #{room['id']})" if capacity < 0 || capacity > 12
+      end
+    end
+
+    errors
+  end
+
+
 end
