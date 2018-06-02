@@ -5,6 +5,7 @@
       <li><%= link_to "Profile", profile_index_path%></li>
       <% if current_profile.doctor? %>
         <li><%= link_to "Add analysis", new_analysis_path%></li>
+        <li><%= link_to "Generate schedule", new_schedule_path%></li>
       <% end %>
       <li><%= link_to "Logout", destroy_profile_session_path, method: :delete %></li>
     </ul>
