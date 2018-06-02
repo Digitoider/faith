@@ -8,15 +8,88 @@ here goes schedule
         <div class="row">
           <div class="col s6 operation">
 
-            <div class="operation-button btn-large waves-effect waves-light red">Add operation </div>
+            <%= form_for @operation_day, url: analysis_index_path do |f| %>
+              <div class="input-field col s12">
+                <%= f.label :at, 'Choose date' %>
+                <%= f.text_field :at, {class: 'datepicker'} %>
+              </div>
+            <% end %>
+
+            <div class="row">
+              <div class="col s12">
+
+                <div class="card blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Room 1</span>
+
+                    <div class="input-field">
+                      <input placeholder="" id="room1" type="text" class="validate">
+                      <label for="room1">Room name</label>
+                    </div>
+
+                    <div class="input-field">
+                      <textarea id="textarea-room1" class="materialize-textarea"></textarea>
+                      <label for="textarea-room1">Room information</label>
+                    </div>
+
+                    <div class="input-field">
+                      <input placeholder="" id="capacity-room1" type="text" class="validate">
+                      <label for="capacity-room1">Room capacity</label>
+                    </div>
+
+                  </div>
+                  <div class="card-action">
+                    <a href="#">Remove room</a>
+                  </div>
+                </div>
+
+                <div class="card blue-grey darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Room 2</span>
+
+                    <div class="input-field">
+                      <input placeholder="" id="room1" type="text" class="validate">
+                      <label for="room1">Room name</label>
+                    </div>
+
+                    <div class="input-field">
+                      <textarea id="textarea-room1" class="materialize-textarea"></textarea>
+                      <label for="textarea-room1">Room information</label>
+                    </div>
+
+                    <div class="input-field">
+                      <input placeholder="" id="capacity-room1" type="text" class="validate">
+                      <label for="capacity-room1">Room capacity</label>
+                    </div>
+
+                  </div>
+                  <div class="card-action">
+                    <a href="#">Remove room</a>
+                  </div>
+                </div>
+
+                <div class="operation-button btn-large waves-effect waves-light red col s12">Add room </div>
+
+              </div>
+            </div>
 
           </div>
         </div>
+
+        <div class="row">
+          <div class="col s6 profiles">
+
+
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
 <script type="text/javascript" charset="utf-8">
-
+    $(document).ready(function () {
+        $('.datepicker').datepicker();
+    });
 </script>
