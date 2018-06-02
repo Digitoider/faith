@@ -15,3 +15,17 @@
 //@import "materialize/components";
 @import "materialize";
 @import "select2.css";
+
+.room-card--remove {
+  cursor: pointer;
+}
+
+.operations-srollable-section{
+  height: 438px;
+  overflow: scroll;
+  //border: 1px solid #ccc;
+}
+
+.operations-srollable-section__wrapper{
+
+}

@@ -6,90 +6,56 @@ here goes schedule
         <span class="card-title">Generate schedule</span>
 
         <div class="row">
+
+          <div class="col s12">
+            <%= form_for @operation_day, url: analysis_index_path do |f| %>
+              <div class="input-field">
+                <%= f.label :at, 'Choose date' %>
+                <%= f.text_field :at, {class: 'datepicker'} %>
+              </div>
+            <% end %>
+          </div>
+
           <div class="col s6 operation">
 
-            <div class="row">
-              <div class="col s12">
+            <div class="operation-add__button btn-large waves-effect waves-light red col s12">Add room</div>
+          </div>
 
-                <%= form_for @operation_day, url: analysis_index_path do |f| %>
-                  <div class="input-field">
-                    <%= f.label :at, 'Choose date' %>
-                    <%= f.text_field :at, {class: 'datepicker'} %>
-                  </div>
+          <div class="col s6">
+            <div class="operations-srollable-section">
+              <table class="highlight">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>List of people that require operation</th>
+                  </tr>
+                </thead>
+
+                <% @profiles_fio.each_with_index do |fio, i| %>
+                  <tbody>
+                    <tr>
+                      <td><%= i %></td>
+                      <td><%= fio %></td>
+                    </tr>
+                  </tbody>
                 <% end %>
-              </div>
+
+              </table>
             </div>
-
-<!--            <div class="row">-->
-<!--              <div class="col s12">-->
-
-<!--                <div class="card blue-grey darken-1">-->
-<!--                  <div class="card-content white-text">-->
-<!--                    <span class="card-title">Room 1</span>-->
-
-<!--                    <div class="input-field">-->
-<!--                      <input placeholder="" id="room1" type="text" class="validate">-->
-<!--                      <label for="room1">Room name</label>-->
-<!--                    </div>-->
-
-<!--                    <div class="input-field">-->
-<!--                      <textarea id="textarea-room1" class="materialize-textarea"></textarea>-->
-<!--                      <label for="textarea-room1">Room information</label>-->
-<!--                    </div>-->
-
-<!--                    <div class="input-field">-->
-<!--                      <input placeholder="" id="capacity-room1" type="text" class="validate">-->
-<!--                      <label for="capacity-room1">Room capacity</label>-->
-<!--                    </div>-->
-
-<!--                  </div>-->
-<!--                  <div class="card-action">-->
-<!--                    <a href="#">Remove room</a>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-<!--                <div class="card blue-grey darken-1">-->
-<!--                  <div class="card-content white-text">-->
-<!--                    <span class="card-title">Room 2</span>-->
-
-<!--                    <div class="input-field">-->
-<!--                      <input placeholder="" id="room1" type="text" class="validate">-->
-<!--                      <label for="room1">Room name</label>-->
-<!--                    </div>-->
-
-<!--                    <div class="input-field">-->
-<!--                      <textarea id="textarea-room1" class="materialize-textarea"></textarea>-->
-<!--                      <label for="textarea-room1">Room information</label>-->
-<!--                    </div>-->
-
-<!--                    <div class="input-field">-->
-<!--                      <input placeholder="" id="capacity-room1" type="text" class="validate">-->
-<!--                      <label for="capacity-room1">Room capacity</label>-->
-<!--                    </div>-->
-
-<!--                  </div>-->
-<!--                  <div class="card-action">-->
-<!--                    <a href="#">Remove room</a>-->
-<!--                  </div>-->
-<!--                </div>-->
-
-                <div class="operation-add__button btn-large waves-effect waves-light red col s12">Add room </div>
-
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col s6 profiles">
-
-
-          </div>
         </div>
 
       </div>
     </div>
+
+    <div class="row">
+      <div class="col s6 profiles">
+
+
+      </div>
+    </div>
+
   </div>
 </div>
 
