@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  at: 2018-06-02
+  capacity: 1.5
+  name: MyString
+  info: MyString
 
 two:
-  at: 2018-06-02
+  capacity: 1.5
+  name: MyString
+  info: MyString

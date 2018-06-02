@@ -31,9 +31,6 @@ class AnalysisController < ApplicationController
     operation = Operation.new
     operation.analysis = analysis
     operation.save
-
-    p operation
-    p analysis
   end
 
   def authenticate_doctor

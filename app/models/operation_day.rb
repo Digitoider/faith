@@ -1,3 +1,3 @@
 class OperationDay < ApplicationRecord
-  has_many :operations
+  has_many :rooms
 end

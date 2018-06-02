@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_01_210527) do
+ActiveRecord::Schema.define(version: 2018_06_02_003158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,21 +27,8 @@ ActiveRecord::Schema.define(version: 2018_06_01_210527) do
     t.index ["profile_id"], name: "index_analyses_on_profile_id"
   end
 
-  create_table "analysis", force: :cascade do |t|
-    t.bigint "profile_id"
-    t.text "analysis"
-    t.date "received_at"
-    t.boolean "operation_required"
-    t.float "min_duration"
-    t.float "max_duration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_analysis_on_profile_id"
-  end
-
   create_table "operation_days", force: :cascade do |t|
     t.date "at"
-    t.float "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,12 +37,12 @@ ActiveRecord::Schema.define(version: 2018_06_01_210527) do
     t.time "starts_at"
     t.time "ends_at"
     t.boolean "is_operated", default: false
-    t.bigint "operation_day_id"
+    t.bigint "room_id"
     t.bigint "analysis_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["analysis_id"], name: "index_operations_on_analysis_id"
-    t.index ["operation_day_id"], name: "index_operations_on_operation_day_id"
+    t.index ["room_id"], name: "index_operations_on_room_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -80,8 +67,18 @@ ActiveRecord::Schema.define(version: 2018_06_01_210527) do
     t.index ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.float "capacity"
+    t.string "name"
+    t.string "info"
+    t.bigint "operation_day_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["operation_day_id"], name: "index_rooms_on_operation_day_id"
+  end
+
   add_foreign_key "analyses", "profiles"
-  add_foreign_key "analysis", "profiles"
   add_foreign_key "operations", "analyses"
-  add_foreign_key "operations", "operation_days"
+  add_foreign_key "operations", "rooms"
+  add_foreign_key "rooms", "operation_days"
 end
