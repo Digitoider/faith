@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3067412-dbff-4443-8506-e37e48bbe624" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/schedule_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/schedule_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/dfs.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/schedule/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/schedule/new.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -62,8 +63,17 @@
       <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/schedule/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="70" column="108" selection-start-line="70" selection-start-column="108" selection-end-line="70" selection-end-column="108" />
+            <state relative-caret-position="210">
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dfs.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/dfs.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="19" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -79,14 +89,17 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;</find>
       <find>&lt;/div&gt;</find>
       <find>'%?%'</find>
+      <find>&quot;</find>
+      <find>&gt;&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
       <replace>&lt;/div&gt;</replace>
       <replace>CONCAT('%',?,'%')</replace>
+      <replace>'</replace>
+      <replace>&gt;&quot;,</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -142,6 +155,7 @@
         <option value="$PROJECT_DIR$/app/controllers/analysis_controller.rb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/controllers/schedule_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/dfs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/schedule/new.html.erb" />
       </list>
     </option>
@@ -158,8 +172,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="49" />
-    <option name="y" value="-772" />
+    <option name="x" value="1415" />
+    <option name="y" value="-4" />
     <option name="width" value="1317" />
     <option name="height" value="772" />
   </component>
@@ -362,12 +376,12 @@
       <workItem from="1527716580559" duration="2959000" />
       <workItem from="1527722675402" duration="3811000" />
       <workItem from="1527784553401" duration="19544000" />
-      <workItem from="1527881965338" duration="20901000" />
+      <workItem from="1527881965338" duration="24833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73799000" />
+    <option name="totallyTimeSpent" value="77731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-4" width="1317" height="772" extended-state="6" />
@@ -424,13 +438,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/devise/shared/_links.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -740,10 +747,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dfs.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/schedule/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="70" column="108" selection-start-line="70" selection-start-column="108" selection-end-line="70" selection-end-column="108" />
+        <state relative-caret-position="210">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
         </state>
       </provider>
     </entry>
