@@ -51,7 +51,7 @@ class MTHMAdapter
       y.each_with_index do |room_id, index|
         # byebug
         next if room_id.negative?
-        schedule[room_id] = {}
+        schedule[room_id] = {} unless schedule.key?(room_id)
         schedule[room_id][:room] = rooms[room_id]
         schedule[room_id][:operations] = [] unless schedule[room_id].key?(:operations)
         schedule[room_id][:operations] << operations[index]
@@ -66,8 +66,8 @@ class MTHMAdapter
       #   end
       # end
 
-      pp "opeartions.count: #{operations.count}"
-      pp 'operations: ', operations
+      # pp "opeartions.count: #{operations.count}"
+      # pp 'operations: ', operations
       # floatize schedule
       schedule
     end

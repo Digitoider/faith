@@ -21,15 +21,35 @@ class ScheduleController < ApplicationController
     return render json: {errors: errors} if errors.any?
     # TODO: Generate Schedule
     rooms = populate_rooms_from_params
-    operations = Operation.where(is_operated: false)
+    operations = Operation.where(is_operated: false).where(assigned: false)
     operations = operations.select do |operation|
       operation.analysis.operation_required
     end
     # pp operations, rooms
     schedule = ::MTHMAdapter.schedule_lower(rooms, operations)
-    5.times {puts}
 
-    pp 'schedule:', schedule
+    # 5.times {puts}
+    # pp 'schedule:', schedule
+
+    # byebug
+
+    schedule.each do |elem|
+      elem[1][:room].save
+      time = Date.parse(params[:at]).beginning_of_day + 9.hours
+      elem[1][:operations].each do |operation|
+        operation.starts_at = time
+        time += operation.analysis.min_duration.hours
+        operation.ends_at = time
+        operation.room = elem[1][:room]
+        operation_day = OperationDay.new(at:  Date.parse(params[:at]))
+        operation_day.rooms << elem[1][:room]
+        # elem[1][:room].operation_day = operation_day
+        operation.assigned = true
+        operation.save
+      end
+    end
+
+
     # TODO: Save schedule
     # TODO: Respond with success (and maybe a link to generated schedule)
   end

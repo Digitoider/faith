@@ -90,8 +90,8 @@ class MTHM
               next if u == 0
               y[u] == 0
             end
-            byebug
-            if d <= _c[y[l]] and _c[y[h]] + d >= wu.min
+            # byebug
+            if d <= _c[y[l]] and wu.any? and _c[y[h]] + d >= wu.min
               t = define_t(_c, d, h, p, w, y)
               _c[y[h]] = _c[y[h]] + d - w[t]
               _c[y[l]] = _c[y[l]] - d
