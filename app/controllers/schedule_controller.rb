@@ -33,20 +33,29 @@ class ScheduleController < ApplicationController
 
     # byebug
 
+    operation_day = OperationDay.new(at:  Date.parse(params[:at]))
+    operation_day.save
     schedule.each do |elem|
-      elem[1][:room].save
+      room = elem[1][:room]
+      operations = elem[1][:operations]
+
+
+      room.operation_day = operation_day
+
       time = Date.parse(params[:at]).beginning_of_day + 9.hours
-      elem[1][:operations].each do |operation|
+      operations.each do |operation|
         operation.starts_at = time
         time += operation.analysis.min_duration.hours
         operation.ends_at = time
-        operation.room = elem[1][:room]
-        operation_day = OperationDay.new(at:  Date.parse(params[:at]))
-        operation_day.rooms << elem[1][:room]
+        operation.room = room
+
+        # operation_day.rooms << elem[1][:room]
         # elem[1][:room].operation_day = operation_day
         operation.assigned = true
         operation.save
       end
+
+      room.save
     end
 
 
