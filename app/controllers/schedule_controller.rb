@@ -1,3 +1,4 @@
+require 'MTHM_adapter'
 class ScheduleController < ApplicationController
 
   def new
@@ -15,15 +16,38 @@ class ScheduleController < ApplicationController
   end
 
   def generate
-    # TODO: Validate data. If errors then generate response errors array
     errors = validate_data
-    return render json: {errors: errors}
+
+    return render json: {errors: errors} if errors.any?
     # TODO: Generate Schedule
+    rooms = populate_rooms_from_params
+    operations = Operation.where(is_operated: false)
+    operations = operations.select do |operation|
+      operation.analysis.operation_required
+    end
+    # pp operations, rooms
+    schedule = ::MTHMAdapter.schedule_lower(rooms, operations)
+    5.times {puts}
+
+    pp 'schedule:', schedule
     # TODO: Save schedule
     # TODO: Respond with success (and maybe a link to generated schedule)
   end
 
   protected
+
+  def populate_rooms_from_params
+    rooms = []
+    params[:rooms].each do |room|
+      room = room[1].to_hash
+      name = room['name']
+      capacity = room['capacity'].to_f
+      info = room['info']
+      rooms << Room.new(name: name, capacity: capacity, info: info)
+    end
+
+    rooms
+  end
 
   def validate_data
     errors = []

@@ -28,3 +28,4 @@ p.age = 45
 p.password = '111111'
 p.save
 p.doctor!
+
