@@ -29,3 +29,41 @@ p.password = '111111'
 p.save
 p.doctor!
 
+
+Analysis.new(profile_id: 2,
+             analysis: "Analysis for name2 surname2 middlename2",
+             received_at: Date.parse('Sat, 02 Jun 2018'),
+             operation_required: false,
+             min_duration: nil,
+             max_duration: nil).save
+Analysis.new(profile_id: 3,
+             analysis: "Analysis for name3",
+             received_at: Date.parse('Sun, 03 Jun 2018'),
+             operation_required: true,
+             min_duration: 1,
+             max_duration: 2).save
+Analysis.new(profile_id: 3,
+             analysis: "Add another analysis for name3",
+             received_at: Date.parse('Tue, 05 Jun 2018'),
+             operation_required: true,
+             min_duration: 2.0,
+             max_duration: 6.0).save
+Analysis.new(profile_id: 8,
+             analysis: "some analysis",
+             received_at: Date.parse('Wed, 06 Jun 2018'),
+             operation_required: false,
+             min_duration: nil,
+             max_duration: nil).save
+Analysis.new(profile_id: 2,
+             analysis: "sadk;lfjasdkl",
+             received_at: Date.parse('Mon, 11 Jun 2018'),
+             operation_required: true,
+             min_duration: 4.0,
+             max_duration: 8.0).save
+Analysis.new(profile_id: 5,
+             analysis: "fdsafa",
+             received_at: Date.parse('Tue, 19 Jun 2018'),
+             operation_required: true,
+             min_duration: 0.25,
+             max_duration: 3.0).save
+
