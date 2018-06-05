@@ -11,46 +11,33 @@ class ScheduleController < ApplicationController
     render
   end
 
-  def create
-
+  def show
+    
   end
 
   def generate
     errors = validate_data
-
     return render json: {errors: errors} if errors.any?
-    # TODO: Generate Schedule
+
     rooms = populate_rooms_from_params
     operations = Operation.where(is_operated: false).where(assigned: false)
     operations = operations.select do |operation|
       operation.analysis.operation_required
     end
-    # pp operations, rooms
     schedule = ::MTHMAdapter.schedule_lower(rooms, operations)
-
-    # 5.times {puts}
-    # pp 'schedule:', schedule
-
-    # byebug
 
     operation_day = OperationDay.new(at:  Date.parse(params[:at]))
     operation_day.save
     schedule.each do |elem|
       room = elem[1][:room]
       operations = elem[1][:operations]
-
-
       room.operation_day = operation_day
-
       time = Date.parse(params[:at]).beginning_of_day + 9.hours
       operations.each do |operation|
         operation.starts_at = time
         time += operation.analysis.min_duration.hours
         operation.ends_at = time
         operation.room = room
-
-        # operation_day.rooms << elem[1][:room]
-        # elem[1][:room].operation_day = operation_day
         operation.assigned = true
         operation.save
       end
@@ -58,9 +45,9 @@ class ScheduleController < ApplicationController
       room.save
     end
 
-
-    # TODO: Save schedule
     # TODO: Respond with success (and maybe a link to generated schedule)
+    flash[:success] = 'Schedule has been successfully generated'
+    redirect_to schedule_show_path
   end
 
   protected
@@ -86,7 +73,7 @@ class ScheduleController < ApplicationController
       begin
         at = Date.parse(params[:at])
       rescue ArgumentError
-        errors.push "Operation date has invalid format"
+        errors.push 'Operation date has invalid format'
       end
     end
     
