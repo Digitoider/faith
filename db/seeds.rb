@@ -67,3 +67,7 @@ Analysis.new(profile_id: 5,
              min_duration: 0.25,
              max_duration: 3.0).save
 
+Operation.new(analysis_id: 2).save
+Operation.new(analysis_id: 3).save
+Operation.new(analysis_id: 5).save
+Operation.new(analysis_id: 6).save
