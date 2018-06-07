@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3067412-dbff-4443-8506-e37e48bbe624" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/schedule_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/schedule_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/schedule/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/schedule/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/schedule/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/schedule/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_navbar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_navbar.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -64,11 +65,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="_navbar.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/shared/_navbar.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+              <caret line="8" column="81" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -76,11 +86,17 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/schedule/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="19" column="104" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="120" column="13" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -88,15 +104,10 @@
       <file leaf-file-name="application.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+            <state relative-caret-position="579">
+              <caret line="87" column="29" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/schedule/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -115,11 +126,11 @@
       <find>'%?%'</find>
       <find>&quot;</find>
       <find>&gt;&quot;</find>
-      <find />
       <find>p</find>
       <find>pp</find>
       <find />
-      <find />
+      <find>grey</find>
+      <find>green</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;</replace>
@@ -127,6 +138,7 @@
       <replace>CONCAT('%',?,'%')</replace>
       <replace>'</replace>
       <replace>&gt;&quot;,</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -157,11 +169,9 @@
         <option value="$PROJECT_DIR$/app/models/analysis.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_errors.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_notices.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_error.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_notice.html.erb" />
         <option value="$PROJECT_DIR$/app/views/analysis/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_navbar.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20180602000742_rename_day_table_to_room_table.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180602001119_rename_operation_day_table_to_room_table.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180602001158_rename_day_table_attributes.rb" />
@@ -184,6 +194,8 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/schedule_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/schedule/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_navbar.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/views/schedule/show.html.erb" />
       </list>
@@ -211,6 +223,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -228,6 +241,19 @@
               <item name="faith" type="b2602c69:ProjectViewProjectNode" />
               <item name="faith" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="faith" type="b2602c69:ProjectViewProjectNode" />
+              <item name="faith" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="faith" type="b2602c69:ProjectViewProjectNode" />
+              <item name="faith" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -235,6 +261,13 @@
               <item name="faith" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="faith" type="b2602c69:ProjectViewProjectNode" />
+              <item name="faith" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="faith" type="b2602c69:ProjectViewProjectNode" />
@@ -258,11 +291,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="app&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/stylesheets/application.scss&#10;sche&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/schedule_controller.rb&#10;routes&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;room&#9;FILE&#9;file:///home/alex/dev/faith/app/models/room.rb&#10;operationday&#9;FILE&#9;file:///home/alex/dev/faith/app/models/operation_day.rb&#10;gemfile&#9;FILE&#9;file:///home/alex/dev/faith/Gemfile&#10;route&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;application.&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/stylesheets/application.scss&#10;opera&#9;FILE&#9;file:///home/alex/dev/faith/app/models/operation_day.rb&#10;sched&#9;null&#9;null&#10;ge&#9;FILE&#9;file:///home/alex/dev/faith/Gemfile&#10;_variables.scss&#9;null&#9;null&#10;gem&#9;FILE&#9;file:///home/alex/dev/faith/Gemfile&#10;pagi&#9;null&#9;null&#10;pagin&#9;null&#9;null&#10;profile&#9;FILE&#9;file:///home/alex/dev/faith/app/models/profile.rb&#10;nav&#9;FILE&#9;file:///home/alex/dev/faith/app/views/shared/_navbar.html.erb&#10;rout&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;ana&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/analysis_controller.rb&#10;app/assets/stylesheets/application.&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/stylesheets/application.scss&#10;app/assets/javascripts/application.js&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/javascripts/application.js&#10;pro&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/profile_controller.rb&#10;na&#9;FILE&#9;file:///home/alex/dev/faith/app/views/shared/_navbar.html.erb&#10;doctor&#9;null&#9;null&#10;_links&#9;FILE&#9;file:///home/alex/dev/faith/app/views/devise/shared/_links.html.erb&#10;edit&#9;FILE&#9;file:///home/alex/dev/faith/app/views/devise/registrations/edit.html.erb&#10;rou&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;profile_co&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/profile_controller.rb&#10;ro&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;_nav&#9;FILE&#9;file:///home/alex/dev/faith/app/views/shared/_navbar.html.erb&#10;Profile&#9;FILE&#9;file:///home/alex/dev/faith/app/models/profile.rb&#10;prof&#9;FILE&#9;file:///home/alex/dev/faith/app/models/profile.rb&#10;application&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/stylesheets/application.scss&#10;.git&#9;FILE&#9;file:///home/alex/dev/faith/.gitignore&#10;home&#9;null&#9;null&#10;ap&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/application_controller.rb&#10;app/views/layouts/application.html.erb&#9;FILE&#9;file:///home/alex/dev/faith/app/views/layouts/application.html.erb&#10;config/environments/development.rb&#9;FILE&#9;file:///home/alex/dev/faith/config/environments/development.rb&#10;app/assets&#9;FILE&#9;file:///home/alex/dev/faith/app/assets" />
+    <property name="SearchEverywhereHistoryKey" value="lay&#9;FILE&#9;file:///home/alex/dev/faith/app/views/layouts&#10;_nav&#9;FILE&#9;file:///home/alex/dev/faith/app/views/shared/_navbar.html.erb&#10;app&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/stylesheets/application.scss&#10;sche&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/schedule_controller.rb&#10;routes&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;room&#9;FILE&#9;file:///home/alex/dev/faith/app/models/room.rb&#10;operationday&#9;FILE&#9;file:///home/alex/dev/faith/app/models/operation_day.rb&#10;gemfile&#9;FILE&#9;file:///home/alex/dev/faith/Gemfile&#10;route&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;application.&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/stylesheets/application.scss&#10;opera&#9;FILE&#9;file:///home/alex/dev/faith/app/models/operation_day.rb&#10;sched&#9;null&#9;null&#10;ge&#9;FILE&#9;file:///home/alex/dev/faith/Gemfile&#10;_variables.scss&#9;null&#9;null&#10;gem&#9;FILE&#9;file:///home/alex/dev/faith/Gemfile&#10;pagi&#9;null&#9;null&#10;pagin&#9;null&#9;null&#10;profile&#9;FILE&#9;file:///home/alex/dev/faith/app/models/profile.rb&#10;nav&#9;FILE&#9;file:///home/alex/dev/faith/app/views/shared/_navbar.html.erb&#10;rout&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;ana&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/analysis_controller.rb&#10;app/assets/stylesheets/application.&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/stylesheets/application.scss&#10;app/assets/javascripts/application.js&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/javascripts/application.js&#10;pro&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/profile_controller.rb&#10;na&#9;FILE&#9;file:///home/alex/dev/faith/app/views/shared/_navbar.html.erb&#10;doctor&#9;null&#9;null&#10;_links&#9;FILE&#9;file:///home/alex/dev/faith/app/views/devise/shared/_links.html.erb&#10;edit&#9;FILE&#9;file:///home/alex/dev/faith/app/views/devise/registrations/edit.html.erb&#10;rou&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;profile_co&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/profile_controller.rb&#10;ro&#9;FILE&#9;file:///home/alex/dev/faith/config/routes.rb&#10;Profile&#9;FILE&#9;file:///home/alex/dev/faith/app/models/profile.rb&#10;prof&#9;FILE&#9;file:///home/alex/dev/faith/app/models/profile.rb&#10;application&#9;FILE&#9;file:///home/alex/dev/faith/app/assets/stylesheets/application.scss&#10;.git&#9;FILE&#9;file:///home/alex/dev/faith/.gitignore&#10;home&#9;null&#9;null&#10;ap&#9;FILE&#9;file:///home/alex/dev/faith/app/controllers/application_controller.rb&#10;app/views/layouts/application.html.erb&#9;FILE&#9;file:///home/alex/dev/faith/app/views/layouts/application.html.erb&#10;config/environments/development.rb&#9;FILE&#9;file:///home/alex/dev/faith/config/environments/development.rb&#10;app/assets&#9;FILE&#9;file:///home/alex/dev/faith/app/assets" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -436,12 +468,13 @@
       <workItem from="1527923167902" duration="13501000" />
       <workItem from="1528030066094" duration="7105000" />
       <workItem from="1528136959617" duration="6557000" />
-      <workItem from="1528215235821" duration="19445000" />
+      <workItem from="1528215235821" duration="19963000" />
+      <workItem from="1528409887320" duration="5310000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124566000" />
+    <option name="totallyTimeSpent" value="130394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-4" width="1317" height="772" extended-state="6" />
@@ -481,6 +514,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/dfs.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -560,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_errors.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -592,13 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="30" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_navbar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -765,27 +791,35 @@
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <caret line="8" column="81" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/schedule/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_navbar.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+        <state relative-caret-position="579">
+          <caret line="87" column="29" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/schedule/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="104" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="120" column="13" selection-start-line="120" selection-start-column="13" selection-end-line="120" selection-end-column="13" />
         </state>
       </provider>
     </entry>

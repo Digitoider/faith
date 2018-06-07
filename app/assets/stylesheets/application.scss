@@ -64,15 +64,26 @@
 }
 
 .schedule{
-  border-left: 1px solid #ccc;
-  min-height: 480px !important;
+  border: 1px solid #ccc;
+  //min-height: 480px !important;
+  height: 560px;
+  overflow: auto;
 }
 
-.operation-day__rooms-info{
-  border-bottom: 1px solid #ccc;
+.operation-day__rooms-info, .operation-day__room-operations-info{
+  border: 1px solid #ccc;
+  height: 280px;
+  overflow: auto;
 }
+
+
+
 
 .operation-day__ > a{
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
+}
+operation-day__card{
+  max-height: 65px !important;
+  max-width: 65px !important;
 }
