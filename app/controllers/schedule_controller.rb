@@ -12,7 +12,32 @@ class ScheduleController < ApplicationController
   end
 
   def show
-    
+    return render
+    @today = Date.current
+    @month_name = @today.strftime('%^B')
+    @days = []
+    @schedule = Hash.new
+    days_in_month(@today.month).times do |i|
+      day = Date.current.beginning_of_month + i - 1
+      operation_day = OperationDay.where(at: day)
+      next if operation_day&.count&.zero?
+
+      formatted_day = "#{day.strftime('%e.%m.%y')}"
+      @schedule[i] = {}
+      @schedule[i][:formatted_day] = formatted_day
+
+
+      byebug
+      @rooms = Room.where(operation_day_id: operation_day.first.id)
+      @rooms.each do |room|
+        @schedule[i]["#{room.id}"] = room.attributes
+        operations = Operation.where(room_id: room.id)
+        @schedule[i]["#{room.id}"]['operations'] = operations
+
+      end
+    end
+
+    return as_json @schedule
   end
 
   def generate
@@ -51,6 +76,10 @@ class ScheduleController < ApplicationController
   end
 
   protected
+
+  def days_in_month(month, year = Date.current.year)
+    Date.new(year, month, -1).day
+  end
 
   def populate_rooms_from_params
     rooms = []
